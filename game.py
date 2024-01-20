@@ -1,6 +1,7 @@
 import pygame
 from scripts.player import Player
 from scripts.background import Backgroud
+from scripts.level import Level
 
 class Game:
     def __init__(self):
@@ -17,16 +18,15 @@ class Game:
         # Instância do background
         self.background = Backgroud(self.screen)
         
-        self.plattaform = pygame.image.load('assets/images/tiles/Plattaform.png').convert_alpha()
+        self.level = Level(self.screen)
     
     # Desenha todos os elementos da tela
     def draw_screnn(self):
         # Denha o background
         self.background.draw()
         self.background.update()
-
-        # Desenha a plataforma de teste
-        self.screen.blit(self.plattaform, (200, 520))
+        
+        self.level.draw()
                 
         # Desenha e atualiza o player a cada quadro
         self.player.draw(self.screen)

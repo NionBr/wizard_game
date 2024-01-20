@@ -37,7 +37,6 @@ def load_background(image):
     
     return image
 
-
 def load_tiles():
     
     path = join('assets', 'images', 'tiles')
