@@ -36,3 +36,16 @@ def load_background(image):
     image = pygame.transform.scale(image, (image.get_width() * 1.4, image.get_height() * 1.4))
     
     return image
+
+
+def load_tiles():
+    
+    path = join('assets', 'images', 'tiles')
+    images = [i for i in listdir(path) if isfile(join(path, i))]
+    
+    all_tiles = []
+    for image in images:
+        tile = pygame.image.load(join(path, image)).convert_alpha()
+        all_tiles.append(tile)
+        
+    return all_tiles
