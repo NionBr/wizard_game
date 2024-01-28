@@ -58,9 +58,14 @@ class Backgroud:
         for i in range(self.screen.get_width() // self.sea.width + 1):
             self.sea_list.append(Sea(i * self.sea.width, self.screen.get_height() - self.sea.height))
     
-    def update(self):
-        pass
-        
+    def parallax(self, x_offset):
+        if x_offset > 0:
+            for cloud in self.clouds_list:
+                cloud.rect.x += 0.6
+        elif x_offset < 0:
+            for cloud in self.clouds_list:
+                cloud.rect.x -= 0.6
+    
     # Método que desenha o background
     def draw(self):
         

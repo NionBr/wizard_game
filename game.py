@@ -14,7 +14,7 @@ class Game:
         self.clock = pygame.time.Clock()
 
         # Instância do player
-        self.player = Player(200, 400, 128, 128)
+        self.player = Player(200, 475, 128, 128)
         # Instância do background
         self.background = Backgroud(self.screen)
         
@@ -24,7 +24,7 @@ class Game:
     def draw_screnn(self):
         # Denha o background
         self.background.draw()
-        self.background.update()
+        self.background.parallax(self.player.x_vel)
         
         self.level.draw()
                 
